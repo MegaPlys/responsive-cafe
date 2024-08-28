@@ -35,7 +35,7 @@
 }
 
 @media screen and (min-width: 968px) {
-  :root {
+  :root{
     --biggest-font-size: 3.5rem;
     --h1-font-size: 2.25rem;
     --h2-font-size: 1.5rem;
@@ -53,69 +53,69 @@
   margin: 0;
 }
 
-html {
+html{
   scroll-behavior: smooth;
 }
 
-body {
+body{
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
 }
 
-h1, h2, h3 {
+h1, h2, h3{
   color: var(--title-color);
   font-weight: var(--font-bold);
 }
 
-h1, h2, h3, p {
+h1, h2, h3, p{
   line-height: 140%;
 }
 
-ul {
+ul{
   list-style: none;
 }
 
-a {
+a{
   text-decoration: none;
 }
 
-img {
+img{
   max-width: 100%;
   height: auto;
 }
 
-button {
+button{
   border: none;
   outline: none;
   cursor: pointer;
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-.container {
+.container{
   max-width: 1024px;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
 
-.grid {
+.grid{
   display: grid;
   gap: 1.5rem;
 }
 
-.section {
+.section{
   padding: 4.5rem 0 2rem;
 }
 
-.section__title {
+.section__title{
   position: relative;
   font-size: var(--h1-font-size);
   padding-left: 1.25rem;
   margin-bottom: 2.5rem;
 }
 
-.section__title::before {
+.section__title::before{
   content: '';
   position: absolute;
   top: 8px;
@@ -126,9 +126,88 @@ button {
 }
 
 /*=============== HEADER & NAV ===============*/
+.header{
+  width: 100%;
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+}
 
+.nav{
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo,
+.nav__toggle{
+  color: #fff;
+}
+
+.nav__logo{
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-weight: var(--font-bold);
+}
+
+.nav__logo-img{
+  width: .75rem;
+}
+
+.nav__toggle{
+  display: inline-flex;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px){
+  .nav__menu{
+    position: fixed;
+    background-color: var(--black-color);
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+  }
+}
+
+.nav__list{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 3rem;
+  padding-top: 9rem;
+}
+
+.nav__link{
+  text-transform: uppercase;
+  color: var(--text-color-light);
+  font-size: var(--h2-font-size);
+  transition: .3s;
+}
+
+.nav__link:hover{
+  color: #fff;
+}
+
+.nav__close{
+  font-size: 2rem;
+  color: #fff;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
 
 /* Show menu */
+.show-menu{
+  right: 0;
+}
 
 
 /* Change background header */
